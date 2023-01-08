@@ -24,7 +24,8 @@ public class FoodTruckServiceImpl implements FoodTruckService {
     FoodTruckResponseAdapter foodTruckResponseAdapter;
     @Override
     public FetchFoodTrucksResponseDto getByApplicantName(String applicant, Integer offset, Integer limit) {
-        Page<FoodTruck> foodTruckPageList = foodTruckRepository.findByApplicant(applicant,getPagination(offset, limit));
+        String likePatternForApplicant = "%" + applicant + "%";
+        Page<FoodTruck> foodTruckPageList = foodTruckRepository.findByApplicantLike(likePatternForApplicant,getPagination(offset, limit));
         return getFetchFoodTrucksResponseDto(foodTruckPageList);
     }
 

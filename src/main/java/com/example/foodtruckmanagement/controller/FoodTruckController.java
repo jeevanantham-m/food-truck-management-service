@@ -18,7 +18,7 @@ public class FoodTruckController {
     @Autowired
     FoodTruckService foodtruckService;
 
-    @GetMapping(path = "/food-truck/applicant/{applicant}")
+    @GetMapping(path = "/food-truck/applicants/{applicant}")
     public ResponseEntity<FetchFoodTrucksResponseDto> getByApplicantName(@Valid @PathVariable("applicant") @NotBlank String applicant, @RequestParam(required = false) Integer offset, @RequestParam(required = false)Integer limit){
         return new ResponseEntity<FetchFoodTrucksResponseDto>(foodtruckService.getByApplicantName(applicant,offset,limit), HttpStatus.OK);
     }
