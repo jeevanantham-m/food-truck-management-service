@@ -13,11 +13,11 @@ POST http://food-truck-management-service-dev.ap-south-1.elasticbeanstalk.com/fo
 
 ### RequestBody
     Expected Date format : "dd-MM-yyyy"
-```json
+```
     {
         "location_id": long,
-        "applicant": String,
-        "facility_type": String,
+        "applicant": string,
+        "facility_type": string,
         "cnn": int,
         "location_description": string,
         "address": string,
